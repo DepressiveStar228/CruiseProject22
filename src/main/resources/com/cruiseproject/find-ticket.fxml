@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="find_ticket" prefHeight="270.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.FindTicketController">
+   <children>
+      <Pane prefHeight="40.0" prefWidth="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="38.0" layoutY="4.0" prefHeight="32.0" prefWidth="154.0" text="Знайти квиток" textAlignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="find_ticket_idCruise_Label" layoutX="151.0" layoutY="54.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="find_ticket_Label2" layoutX="14.0" layoutY="53.0" prefHeight="20.0" prefWidth="136.0" text="ID вибраного круїза:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label3" layoutX="15.0" layoutY="84.0" text="Назва круїзу:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_nameCruise_Label" layoutX="151.0" layoutY="84.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label4" layoutX="15.0" layoutY="115.0" text="Замовник:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label5" layoutX="15.0" layoutY="146.0" text="Компанія:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label6" layoutX="15.0" layoutY="177.0" text="Лайнер:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label7" layoutX="15.0" layoutY="207.0" text="Ціна:" AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_namePeople_Label" layoutX="151.0" layoutY="116.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="find_ticket_company_Label" layoutX="151.0" layoutY="146.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_lainer_Label" layoutX="151.0" layoutY="177.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_price_Label" layoutX="151.0" layoutY="207.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_Label1" layoutX="170.0" layoutY="74.0" text="Введіть ID квитка">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="find_ticket_IDTicketTextField" layoutX="155.0" layoutY="102.0" />
+      <Button fx:id="find_ticket_getIDTicketButton" layoutX="181.0" layoutY="143.0" mnemonicParsing="false" onAction="#onGetIDTicketButtonClick" text="Підтвердити" />
+   </children>
+</AnchorPane>

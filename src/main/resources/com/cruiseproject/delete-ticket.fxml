@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="del_ticket" prefHeight="270.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.DeleteTicketController">
+   <children>
+      <Pane prefHeight="40.0" prefWidth="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="29.0" layoutY="4.0" text="Відмінити квиток">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="del_ticket_Label1" layoutX="170.0" layoutY="74.0" text="Введіть ID квитка">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="del_ticket_IDTicketTextField" layoutX="155.0" layoutY="102.0" />
+      <Button fx:id="del_ticket_getIDTicketButton" layoutX="181.0" layoutY="143.0" mnemonicParsing="false" onAction="#onDeleteTicketButtonClick" text="Підтвердити" />
+   </children>
+</AnchorPane>

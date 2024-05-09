@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.SortController">
+   <children>
+      <Pane prefHeight="40.0" prefWidth="230.0">
+         <children>
+             <Label layoutX="29.0" layoutY="4.0" text="Сортувати круїзи">
+               <font>
+                  <Font size="22.0" />
+               </font>
+             </Label>
+         </children>
+      </Pane>
+      <Label fx:id="sort_cuises_Label1" layoutX="29.0" layoutY="93.0" text="За компанією">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_cuises_Label2" layoutX="371.0" layoutY="93.0" text="За ціною">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_cuises_Label3" layoutX="29.0" layoutY="191.0" text="Виберіть дату початку круїзу">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_cuises_Label4" layoutX="370.0" layoutY="191.0" text="Виберіть дату кінця круїзу">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ChoiceBox fx:id="sort_cuises_companyChoiceBox" layoutX="26.0" layoutY="121.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="sort_cuises_priceChoiceBox" layoutX="370.0" layoutY="121.0" prefWidth="150.0" />
+      <Button fx:id="sort_cruises_finishButton" layoutX="229.0" layoutY="320.0" mnemonicParsing="false" onAction="#onSortCruisesButtonClick" prefHeight="47.0" prefWidth="142.0" text="Застосувати налаштування" textAlignment="CENTER" wrapText="true" />
+      <DatePicker fx:id="sort_cuises_dateStartDatePicker" layoutX="27.0" layoutY="218.0" />
+      <DatePicker fx:id="sort_cuises_dateFinishDatePicker" layoutX="370.0" layoutY="218.0" />
+   </children>
+</AnchorPane>
