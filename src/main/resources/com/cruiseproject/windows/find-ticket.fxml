@@ -44,12 +44,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label6" layoutX="15.0" layoutY="177.0" text="Лайнер:" AnchorPane.leftAnchor="15.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="find_ticket_Label7" layoutX="15.0" layoutY="207.0" text="Ціна:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label8" layoutX="15.0" layoutY="203.0" text="Ціна:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -63,12 +58,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_lainer_Label" layoutX="151.0" layoutY="177.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="find_ticket_price_Label" layoutX="151.0" layoutY="207.0">
+      <Label fx:id="find_ticket_price_Label" layoutX="150.0" layoutY="203.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -80,5 +70,15 @@
       </Label>
       <TextField fx:id="find_ticket_IDTicketTextField" layoutX="155.0" layoutY="102.0" />
       <Button fx:id="find_ticket_getIDTicketButton" layoutX="181.0" layoutY="143.0" mnemonicParsing="false" onAction="#onGetIDTicketButtonClick" text="Підтвердити" />
+      <Label fx:id="find_ticket_Label7" layoutX="15.0" layoutY="175.0" text="Лайнер">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="find_ticket_liner_Label" layoutX="151.0" layoutY="175.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

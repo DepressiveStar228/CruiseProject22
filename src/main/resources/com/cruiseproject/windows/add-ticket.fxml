@@ -34,21 +34,16 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="add_ticket_Label4" layoutX="42.0" layoutY="164.0" text="Введіть ваше ім'я">
+      <Label fx:id="add_ticket_Label4" layoutX="132.0" layoutY="164.0" text="Введіть ваше ім'я">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="add_ticket_Label6" layoutX="421.0" layoutY="164.0" text="Введіть ваше по-батькові">
+      <Label fx:id="add_ticket_Label5" layoutX="341.0" layoutY="164.0" text="Введіть ваше призвіще">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="add_ticket_Label5" layoutX="226.0" layoutY="164.0" text="Введіть ваше призвіще">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <TextField fx:id="add_ticket_nameTextField" layoutX="23.0" layoutY="187.0" />
-      <TextField fx:id="add_ticket_secNameTextField" layoutX="225.0" layoutY="187.0" />
-      <TextField fx:id="add_ticket_thirNameTextField" layoutX="428.0" layoutY="187.0" />
+      <TextField fx:id="add_ticket_nameTextField" layoutX="113.0" layoutY="187.0" />
+      <TextField fx:id="add_ticket_secNameTextField" layoutX="340.0" layoutY="187.0" />
       <Button fx:id="add_ticketFinishButton" layoutX="244.0" layoutY="263.0" mnemonicParsing="false" onAction="#onFinishButtonClick" text="Замовити квиток" textAlignment="CENTER" />
       <Button fx:id="add_ticket_getIDCruiseButton" layoutX="257.0" layoutY="138.0" mnemonicParsing="false" onAction="#onGetIDCruiseButtonClick" text="Підтвердити" />
       <Label fx:id="add_ticket_Label1" layoutX="247.0" layoutY="75.0" text="Введіть ID круїзу">

@@ -22,17 +22,21 @@ public class CruiseDAO {
 
         try {
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("SELECT * FROM public.cruise WHERE city_id=?");
+                    connection.prepareStatement("SELECT * FROM public.cruise WHERE cruise_id=?");
             preparedStatement.setInt(1,cruise_id);
             ResultSet cruiseData = preparedStatement.executeQuery();
             cruise = new Cruise();
-            cruise.setId(cruiseData.getInt("cruise_id"));
-            cruise.setPrice(cruiseData.getInt("price"));
-            cruise.setFreeSeats(cruiseData.getInt("free_seats"));
-            cruise.setCruiseRoute(getCities(cruise_id));
-            cruise.setArrival(cruiseData.getString("arrival_date"));
-            cruise.setDeparture(cruiseData.getString("departure_date"));
-            cruise.setCompany(cruiseData.getString("company_name"));
+            while(cruiseData.next()) {
+                cruise.setId(cruiseData.getInt("cruise_id"));
+                cruise.setPrice(cruiseData.getInt("price"));
+                cruise.setFreeSeats(cruiseData.getInt("free_seats"));
+                cruise.setCruiseRoute(getCities(cruise_id));
+                cruise.setArrival(cruiseData.getString("arrival_date"));
+                cruise.setDeparture(cruiseData.getString("departure_date"));
+                cruise.setCompany(cruiseData.getString("company_name"));
+                cruise.setName(cruiseData.getString("name"));
+                cruise.setShip(cruiseData.getString("ship"));
+            }
         } catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
@@ -45,7 +49,7 @@ public class CruiseDAO {
     }
     public static ArrayList<City> getCities(int cruise_id) throws SQLException {
         PreparedStatement preparedStatement =
-        connection.prepareStatement("SELECT cruise_id, city_id, city_position FROM public.cruise2cities where cruise_id = ?");
+                connection.prepareStatement("SELECT cruise_id, city_id, city_position FROM public.cruise2cities where cruise_id = ?");
         preparedStatement.setInt(1,cruise_id);
         ResultSet citiesData = preparedStatement.executeQuery();
         ArrayList <City> cityResult = new ArrayList<>();
@@ -113,6 +117,12 @@ public class CruiseDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (NullPointerException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
         }
 
         return cruises;

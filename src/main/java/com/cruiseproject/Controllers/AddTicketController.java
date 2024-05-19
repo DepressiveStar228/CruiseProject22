@@ -2,7 +2,6 @@ package com.cruiseproject.Controllers;
 import com.cruiseproject.DAO.CruiseDAO;
 import com.cruiseproject.DAO.TicketDAO;
 import com.cruiseproject.Items.Cruise;
-import com.cruiseproject.Items.Ticket;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -30,9 +29,6 @@ public class AddTicketController {
     private Label add_ticket_Label5;
 
     @FXML
-    private Label add_ticket_Label6;
-
-    @FXML
     private Label add_ticket_idCruise_Label;
 
     @FXML
@@ -43,9 +39,6 @@ public class AddTicketController {
 
     @FXML
     private TextField add_ticket_secNameTextField;
-
-    @FXML
-    private TextField add_ticket_thirNameTextField;
 
     @FXML
     private Button add_ticketFinishButton;
@@ -104,7 +97,7 @@ public class AddTicketController {
     @FXML
     private void onFinishButtonClick() {
         try {
-            TicketDAO.addTicket(cruiseID);
+            TicketDAO.addTicket(cruiseID, add_ticket_nameTextField.getText() , add_ticket_secNameTextField.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успішне замовлення");
             alert.setHeaderText(null);
@@ -116,7 +109,7 @@ public class AddTicketController {
         }
     }
     public static void addTicket(){
-        FXMLLoader fxmlLoader = new FXMLLoader(AddTicketController.class.getResource("/com/cruiseproject/add-ticket.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(AddTicketController.class.getResource("/com/cruiseproject/windows/add-ticket.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 600, 330);
             window = new Stage();
@@ -135,12 +128,10 @@ public class AddTicketController {
         add_ticket_Label3.setVisible(mod);
         add_ticket_Label4.setVisible(mod);
         add_ticket_Label5.setVisible(mod);
-        add_ticket_Label6.setVisible(mod);
         add_ticket_idCruise_Label.setVisible(mod);
         add_ticket_nameCruise_Label.setVisible(mod);
         add_ticket_nameTextField.setVisible(mod);
         add_ticket_secNameTextField.setVisible(mod);
-        add_ticket_thirNameTextField.setVisible(mod);
         add_ticketFinishButton.setVisible(mod);
 
         add_ticket_Label1.setVisible(!mod);

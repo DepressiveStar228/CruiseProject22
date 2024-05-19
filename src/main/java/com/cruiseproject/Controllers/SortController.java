@@ -1,5 +1,7 @@
 package com.cruiseproject.Controllers;
 
+import com.cruiseproject.DAO.CruiseDAO;
+import com.cruiseproject.Items.Cruise;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -13,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class SortController {
@@ -29,8 +32,9 @@ public class SortController {
     private DatePicker sort_cuises_dateFinishDatePicker;
 
     private static Stage window;
-    boolean selectedDepartureDate = false;
-    boolean selectedArrivalDate = false;
+    private boolean selectedDepartureDate = false;
+    private boolean selectedArrivalDate = false;
+    private HelloController helloController;
 
 
     public void initialize() {
@@ -46,14 +50,30 @@ public class SortController {
     }
 
     @FXML
-    private void onSortCruisesButtonClick() {
+    private void onSortCruisesButtonClick() throws IOException {
         LocalDate departureDate = sort_cuises_dateStartDatePicker.getValue();
         LocalDate arrivalDate = sort_cuises_dateFinishDatePicker.getValue();
         String company = sort_cuises_companyChoiceBox.getValue();
         String price = sort_cuises_priceChoiceBox.getValue();
 
         switch (checkCorrectData(departureDate, arrivalDate, company, price)) {
-            case 1 -> window.close();
+            case 1 -> {
+                /*
+                ArrayList<Cruise> cruises = метод получения списка круизов
+
+                if (!cruises.isEmpty()){
+                    helloController.setCruises(cruises);
+                }
+                else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Помилка");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Нічого не знайдено");
+                    alert.showAndWait();
+                }
+                 */
+                window.close();
+            }
             case 2 -> {
                 Alert alert2 = new Alert(Alert.AlertType.ERROR);
                 alert2.setTitle("Помилка");
@@ -87,12 +107,11 @@ public class SortController {
                 if (Objects.equals(price, "Дешеві")) { priceType = 1; }
                 else { priceType = 2; }
 
-                /*
                 try {
-                    ArrayList<Cruise> sortedCruises = CruiseDAO.sorting(company, priceType, departureDate, arrivalDate);
+                    ArrayList<Cruise> sortedCruises = CruiseDAO.sorting(company, priceType, departureDate.toString(), arrivalDate.toString());
 
                     if (!sortedCruises.isEmpty()){
-                        //медот добавления в ленту
+                        helloController.setCruises(sortedCruises);
                     }
                     else {
                         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -101,24 +120,26 @@ public class SortController {
                         alert.setContentText("Нічого не знайдено");
                         alert.showAndWait();
                     }
-                } catch (SQLException e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                } catch (NullPointerException e) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Помилка");
                     alert.setHeaderText(null);
-                    alert.setContentText("Помилка в сортуванні");
+                    alert.setContentText("Нічого не знайдено");
                     alert.showAndWait();
                 }
-                 */
 
                 window.close();
             }
         }
     }
 
-    public static void sortCruises() {
-        FXMLLoader fxmlLoader = new FXMLLoader(SortController.class.getResource("/com/cruiseproject/sort-cruise.fxml"));
+    public static void sortCruises(HelloController helloController) {
+        FXMLLoader fxmlLoader = new FXMLLoader(SortController.class.getResource("/com/cruiseproject/windows/sort-cruise.fxml"));
+
         try {
             Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+            SortController controller = fxmlLoader.getController();
+            controller.setHelloController(helloController);
             window = new Stage();
             window.setResizable(false);
             window.initModality(Modality.APPLICATION_MODAL);
@@ -128,6 +149,10 @@ public class SortController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void setHelloController(HelloController helloController) {
+        this.helloController = helloController;
     }
 
     private int checkCorrectData(LocalDate departureDate, LocalDate arrivalDate, String company, String price){

@@ -36,7 +36,7 @@ public class InfoController {
     }
 
     public static void info(boolean modType) {
-        FXMLLoader fxmlLoader = new FXMLLoader(InfoController.class.getResource("/com/cruiseproject/info.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(InfoController.class.getResource("/com/cruiseproject/windows/info.fxml"));
         mod = modType;
 
         if (modType){
@@ -69,7 +69,7 @@ public class InfoController {
 
     private static String readTextFile(String filename){
         StringBuilder content = new StringBuilder();
-        String path = "D:\\Projects\\lab1\\JavaProject\\src\\main\\resources\\com\\cruiseproject\\";
+        String path = "D:\\Projects\\lab1\\JavaProject\\src\\main\\resources\\com\\cruiseproject\\text_files\\";
         String line;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path + filename), "UTF-8"))) {

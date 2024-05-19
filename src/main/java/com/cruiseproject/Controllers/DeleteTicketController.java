@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -82,7 +81,7 @@ public class DeleteTicketController {
     }
 
     public static void delTicket(){
-        FXMLLoader fxmlLoader = new FXMLLoader(DeleteTicketController.class.getResource("/com/cruiseproject/delete-ticket.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(DeleteTicketController.class.getResource("/com/cruiseproject/windows/delete-ticket.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 480, 270);
             window = new Stage();

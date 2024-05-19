@@ -25,8 +25,9 @@
             <Button layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#onInformationClick" prefHeight="31.0" prefWidth="120.0" text="Довідка" />
          </children>
       </Pane>
-      <ScrollPane fx:id="listCruises" prefHeight="500.0" prefWidth="500.0">
+      <ScrollPane fx:id="listCruises" prefHeight="500.0" prefWidth="500.0" vbarPolicy="NEVER">
         <content>
+          <VBox fx:id="itemCardCruise" spacing="-1.5" />
         </content>
       </ScrollPane>
    </children>

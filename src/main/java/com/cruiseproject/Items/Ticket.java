@@ -4,13 +4,33 @@ public class Ticket {
     private int id;
     private Cruise cruise;
     private int seatNum;
+    private String surname;
+    private String firstname;
 
     public Ticket(){}
 
-    public Ticket(int id, Cruise cruise, int seatNum) {
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public Ticket(int id, Cruise cruise, int seatNum, String surname, String firstname) {
         this.id = id;
         this.cruise = cruise;
         this.seatNum = seatNum;
+        this.surname = surname;
+        this.firstname = firstname;
     }
 
     public Ticket(int ticketId, Object cruise) {

@@ -17,10 +17,17 @@ public class CityDAO {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("SELECT * FROM public.cities WHERE city_id=?");
         preparedStatement.setInt(1,city_id);
-        ResultSet cityData = preparedStatement.executeQuery();
-        City city = new City();
-        city.setId(cityData.getInt("city_id"));
-        city.setName(cityData.getString("city_name"));
+        City city = null;
+        try (ResultSet cityData = preparedStatement.executeQuery()) {
+
+            while (cityData.next()) {
+                city = new City();
+                city.setId(cityData.getInt("city_id"));
+                city.setName(cityData.getString("city_name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return city;
     }
 

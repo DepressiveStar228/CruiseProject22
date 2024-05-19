@@ -1,14 +1,11 @@
 package com.cruiseproject.Controllers;
 
-import com.cruiseproject.DAO.CruiseDAO;
 import com.cruiseproject.DAO.TicketDAO;
-import com.cruiseproject.Items.Cruise;
 import com.cruiseproject.Items.Ticket;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -32,10 +29,10 @@ public class FindTicketController {
     private Label find_ticket_Label5;
 
     @FXML
-    private Label find_ticket_Label6;
+    private Label find_ticket_Label7;
 
     @FXML
-    private Label find_ticket_Label7;
+    private Label find_ticket_Label8;
 
     @FXML
     private Label find_ticket_idCruise_Label;
@@ -50,7 +47,7 @@ public class FindTicketController {
     private Label find_ticket_company_Label;
 
     @FXML
-    private Label find_ticket_lainer_Label;
+    private Label find_ticket_liner_Label;
 
     @FXML
     private Label find_ticket_price_Label;
@@ -82,11 +79,11 @@ public class FindTicketController {
                 if (selectedTicket != null){
                     changeVisibleItem(true);
                     find_ticket_idCruise_Label.setText(textID);
-                    find_ticket_nameCruise_Label.setText("");
-                    find_ticket_namePeople_Label.setText("");
-                    find_ticket_company_Label.setText("");
-                    find_ticket_lainer_Label.setText("");
-                    find_ticket_price_Label.setText("");
+                    find_ticket_nameCruise_Label.setText(selectedTicket.getCruise().getName());
+                    find_ticket_namePeople_Label.setText(selectedTicket.getSurname() + " " + selectedTicket.getFirstname());
+                    find_ticket_company_Label.setText(selectedTicket.getCruise().getCompany());
+                    find_ticket_liner_Label.setText(selectedTicket.getCruise().getShip());
+                    find_ticket_price_Label.setText(String.valueOf(selectedTicket.getCruise().getPrice()));
                 }
                 else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -112,7 +109,7 @@ public class FindTicketController {
     }
 
     public static void findTicket(){
-        FXMLLoader fxmlLoader = new FXMLLoader(FindTicketController.class.getResource("/com/cruiseproject/find-ticket.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(FindTicketController.class.getResource("/com/cruiseproject/windows/find-ticket.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 480, 270);
             window = new Stage();
@@ -131,13 +128,13 @@ public class FindTicketController {
         find_ticket_Label3.setVisible(mod);
         find_ticket_Label4.setVisible(mod);
         find_ticket_Label5.setVisible(mod);
-        find_ticket_Label6.setVisible(mod);
         find_ticket_Label7.setVisible(mod);
+        find_ticket_Label8.setVisible(mod);
         find_ticket_idCruise_Label.setVisible(mod);
         find_ticket_nameCruise_Label.setVisible(mod);
         find_ticket_namePeople_Label.setVisible(mod);
         find_ticket_company_Label.setVisible(mod);
-        find_ticket_lainer_Label.setVisible(mod);
+        find_ticket_liner_Label.setVisible(mod);
         find_ticket_price_Label.setVisible(mod);
 
         find_ticket_Label1.setVisible(!mod);

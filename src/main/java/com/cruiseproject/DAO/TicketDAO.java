@@ -22,9 +22,13 @@ public class TicketDAO {
             preparedStatement.setInt(1 , ticket_id);
             ResultSet ticketData = preparedStatement.executeQuery();
             ticket = new Ticket();
-            ticket.setId(ticketData.getInt("ticket_id"));
-            ticket.setSeatNum(ticketData.getInt("seat_num"));
-            ticket.setCruise(CruiseDAO.findCruiseByID(ticketData.getInt("cruise_id")));
+            while(ticketData.next()) {
+                ticket.setId(ticketData.getInt("ticket_id"));
+                ticket.setSeatNum(ticketData.getInt("seat_num"));
+                ticket.setCruise(CruiseDAO.findCruiseByID(ticketData.getInt("cruise")));
+                ticket.setSurname(ticketData.getString("surname"));
+                ticket.setFirstname(ticketData.getString("firstname"));
+            }
         } catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
@@ -51,13 +55,15 @@ public class TicketDAO {
         }
         return false;
     }
-    public static void  addTicket(int cruise_id) throws SQLException {
+    public static void  addTicket(int cruise_id, String surname, String firstname) throws SQLException {
         try {
             Cruise cruise = CruiseDAO.findCruiseByID(cruise_id);
             PreparedStatement preparedStatement =
-                    connection.prepareStatement("INSERT INTO public.tickets (cruise, seat_num) VALUES (?, ?)");
+                    connection.prepareStatement("INSERT INTO public.tickets (cruise, seat_num, surname , firstname) VALUES (?, ? , ?, ?)");
             preparedStatement.setInt(1, cruise_id);
             preparedStatement.setInt(2,cruise.getFreeSeats());
+            preparedStatement.setString(3,surname);
+            preparedStatement.setString(4,firstname);
             CruiseDAO.decrementFreeSeats(cruise_id);
             preparedStatement.executeUpdate();
         } catch (NullPointerException e){

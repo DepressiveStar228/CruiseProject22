@@ -11,6 +11,36 @@ public class Cruise {
     private String company;
     private String departure;
     private String arrival;
+    private String ship;
+    private String name;
+
+    public String getShip() {
+        return ship;
+    }
+
+    public void setShip(String ship) {
+        this.ship = ship;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Cruise(int id, int price, int freeSeats, ArrayList<City> cruiseRoute, String company, String departure, String arrival, String ship, String name) {
+        this.id = id;
+        this.price = price;
+        this.freeSeats = freeSeats;
+        this.cruiseRoute = cruiseRoute;
+        this.company = company;
+        this.departure = departure;
+        this.arrival = arrival;
+        this.ship = ship;
+        this.name = name;
+    }
 
     public String getCompany() {
         return company;
@@ -38,15 +68,6 @@ public class Cruise {
 
     public Cruise(){};
 
-    public Cruise(int id, int price, int freeSeats, ArrayList<City> cruiseRoute, String company, String departure, String arrival) {
-        this.id = id;
-        this.price = price;
-        this.freeSeats = freeSeats;
-        this.cruiseRoute = cruiseRoute;
-        this.company = company;
-        this.departure = departure;
-        this.arrival = arrival;
-    }
 
     public String getRoute() {
         StringBuilder route = new StringBuilder();
