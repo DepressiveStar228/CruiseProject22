@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V4 with Windows">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/about_us_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/about_us_text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/add-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/add-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/delete-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/delete-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/find-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/find-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/information_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/information_text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/sort-cruise.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/sort-cruise.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V5 with Windows and ScrollPanel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +132,7 @@
       <workItem from="1716068992954" duration="402000" />
       <workItem from="1716069408924" duration="1367000" />
       <workItem from="1716070787614" duration="6573000" />
-      <workItem from="1716119501859" duration="3930000" />
+      <workItem from="1716119501859" duration="4399000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -188,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715276202328</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="V5 with Windows and ScrollPanel">
+      <option name="closed" value="true" />
+      <created>1716123899580</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716123899580</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +196,7 @@
     <MESSAGE value="V2 with DataBase and DAO" />
     <MESSAGE value="V3 with DataBase and DAO" />
     <MESSAGE value="V4 with Windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="V4 with Windows" />
+    <MESSAGE value="V5 with Windows and ScrollPanel" />
+    <option name="LAST_COMMIT_MESSAGE" value="V5 with Windows and ScrollPanel" />
   </component>
 </project>

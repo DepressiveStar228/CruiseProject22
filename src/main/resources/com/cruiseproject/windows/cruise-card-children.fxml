@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="itemCardCruise" prefHeight="160.0" prefWidth="498.0" styleClass="card-border" stylesheets="@../styles/cruise_card_item.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.AddCruiseCardController">
+   <children>
+      <Label fx:id="Label1" layoutX="14.0" layoutY="14.0" text="ID:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_childrenID_Label" layoutX="32.0" layoutY="14.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_childrenNameCruise_Label" layoutX="78.0" layoutY="14.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Label2" layoutX="8.0" layoutY="41.0" text="Дати подорожі:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="Label3" layoutX="8.0" layoutY="67.0" text="Назва компанії:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="Label5" layoutX="8.0" layoutY="119.0" text="Ціна квитка:">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_childrenDate_Label" layoutX="115.0" layoutY="41.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="sort_childrenNameCompany_Label" layoutX="115.0" layoutY="68.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="sort_childrenPrice_Label" layoutX="115.0" layoutY="120.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="Label4" layoutX="8.0" layoutY="94.0" text="Назва лайнера:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="sort_childrenLiner_Label" layoutX="115.0" layoutY="94.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

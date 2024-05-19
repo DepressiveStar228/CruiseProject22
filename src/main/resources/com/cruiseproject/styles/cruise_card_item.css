@@ -1,0 +1,5 @@
+.card-border {
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+}
