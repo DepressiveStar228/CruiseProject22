@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V5 with Windows and ScrollPanel" />
+    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="Final">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/49af501e-d4e5-4b14-a79e-4e272a054253.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/49af501e-d4e5-4b14-a79e-4e272a054253.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +53,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Aema88&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6c132ec0-59cc-4b27-ab5d-e91dcb7e3639" />
+        <option name="url" value="https://github.com/DepressiveStar228/CruiseProject22" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -133,6 +158,8 @@
       <workItem from="1716069408924" duration="1367000" />
       <workItem from="1716070787614" duration="6573000" />
       <workItem from="1716119501859" duration="4399000" />
+      <workItem from="1716214881624" duration="3894000" />
+      <workItem from="1716305830069" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -197,6 +224,23 @@
     <MESSAGE value="V3 with DataBase and DAO" />
     <MESSAGE value="V4 with Windows" />
     <MESSAGE value="V5 with Windows and ScrollPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="V5 with Windows and ScrollPanel" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

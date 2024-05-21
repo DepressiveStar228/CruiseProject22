@@ -1,6 +1,7 @@
 package com.cruiseproject.Items;
 
 public class Ticket {
+
     private int id;
     private Cruise cruise;
     private int seatNum;

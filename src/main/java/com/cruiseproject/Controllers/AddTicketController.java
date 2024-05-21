@@ -2,6 +2,7 @@ package com.cruiseproject.Controllers;
 import com.cruiseproject.DAO.CruiseDAO;
 import com.cruiseproject.DAO.TicketDAO;
 import com.cruiseproject.Items.Cruise;
+import com.cruiseproject.Items.Ticket;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -70,6 +71,7 @@ public class AddTicketController {
                 if (selectedCruise != null){
                     changeVisibleItem(true);
                     add_ticket_idCruise_Label.setText(textID);
+                    add_ticket_nameCruise_Label.setText(selectedCruise.getName());
                 }
                 else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -101,7 +103,7 @@ public class AddTicketController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успішне замовлення");
             alert.setHeaderText(null);
-            alert.setContentText("Замовлення " + selectedCruise.getCruiseRoute() + " успішно оформлено.");
+            alert.setContentText("Ваш квиток має ID " + TicketDAO.getLastID());
             alert.showAndWait();
             window.close();
         } catch (SQLException e) {

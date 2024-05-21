@@ -14,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -37,20 +38,20 @@ public class SortController {
     private HelloController helloController;
 
 
-    public void initialize() {
+    public void initialize() throws SQLException {
         sort_cuises_dateStartDatePicker.setOnAction(event -> selectedDepartureDate = true);
         sort_cuises_dateFinishDatePicker.setOnAction(event -> selectedArrivalDate = true);
 
-        //ArrayList<String> arrayList = CruiseDAO.getCompany();
-        //ObservableList<String> nameCompanyItems = FXCollections.observableArrayList(arrayList);
-        //sort_cuises_companyChoiceBox.setItems(nameCompanyItems);
+         ArrayList<String> arrayList = CruiseDAO.getCompany();
+         ObservableList<String> nameCompanyItems1 = FXCollections.observableArrayList(arrayList);
+         sort_cuises_companyChoiceBox.setItems(nameCompanyItems1);
 
         ObservableList<String> nameCompanyItems = FXCollections.observableArrayList("Дешеві", "Дорогі");
         sort_cuises_priceChoiceBox.setItems(nameCompanyItems);
     }
 
     @FXML
-    private void onSortCruisesButtonClick() throws IOException {
+    private void onSortCruisesButtonClick() throws IOException, SQLException {
         LocalDate departureDate = sort_cuises_dateStartDatePicker.getValue();
         LocalDate arrivalDate = sort_cuises_dateFinishDatePicker.getValue();
         String company = sort_cuises_companyChoiceBox.getValue();
@@ -58,8 +59,8 @@ public class SortController {
 
         switch (checkCorrectData(departureDate, arrivalDate, company, price)) {
             case 1 -> {
-                /*
-                ArrayList<Cruise> cruises = метод получения списка круизов
+
+                ArrayList<Cruise> cruises = CruiseDAO.getCruises();
 
                 if (!cruises.isEmpty()){
                     helloController.setCruises(cruises);
@@ -71,7 +72,7 @@ public class SortController {
                     alert.setContentText("Нічого не знайдено");
                     alert.showAndWait();
                 }
-                 */
+
                 window.close();
             }
             case 2 -> {
@@ -108,7 +109,12 @@ public class SortController {
                 else { priceType = 2; }
 
                 try {
-                    ArrayList<Cruise> sortedCruises = CruiseDAO.sorting(company, priceType, departureDate.toString(), arrivalDate.toString());
+                    ArrayList<Cruise> sortedCruises = CruiseDAO.sorting(
+                            company,
+                            priceType,
+                            departureDate != null ? departureDate.toString() : null,
+                            arrivalDate != null ? arrivalDate.toString() : null
+                    );
 
                     if (!sortedCruises.isEmpty()){
                         helloController.setCruises(sortedCruises);

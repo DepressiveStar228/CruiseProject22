@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -55,6 +56,15 @@ public class TicketDAO {
         }
         return false;
     }
+    public static int getLastID() throws SQLException{
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT MAX(ticket_id) as ticket_id FROM public.tickets");
+        ResultSet lastTicket = preparedStatement.executeQuery();
+        int lastID = 0;
+        while(lastTicket.next()){
+            lastID = lastTicket.getInt("ticket_id");
+        }
+        return lastID;
+    }
     public static void  addTicket(int cruise_id, String surname, String firstname) throws SQLException {
         try {
             Cruise cruise = CruiseDAO.findCruiseByID(cruise_id);
@@ -66,6 +76,7 @@ public class TicketDAO {
             preparedStatement.setString(4,firstname);
             CruiseDAO.decrementFreeSeats(cruise_id);
             preparedStatement.executeUpdate();
+
         } catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");

@@ -61,6 +61,39 @@ public class CruiseDAO {
         }
         return cityResult;
     }
+    public static ArrayList<Cruise> getCruises() throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("SELECT * FROM public.cruise");
+
+        ResultSet cruiseData = preparedStatement.executeQuery();
+        ArrayList <Cruise> cruiseResult = new ArrayList<>();
+        while(cruiseData.next()){
+            Cruise cruise = new Cruise();
+            cruise.setId(cruiseData.getInt("cruise_id"));
+            cruise.setPrice(cruiseData.getInt("price"));
+            cruise.setFreeSeats(cruiseData.getInt("free_seats"));
+            cruise.setCruiseRoute(getCities(cruiseData.getInt("cruise_id")));
+            cruise.setArrival(cruiseData.getString("arrival_date"));
+            cruise.setDeparture(cruiseData.getString("departure_date"));
+            cruise.setCompany(cruiseData.getString("company_name"));
+            cruise.setName(cruiseData.getString("name"));
+            cruise.setShip(cruiseData.getString("ship"));
+            cruiseResult.add(cruise);
+        }
+        return cruiseResult;
+    }
+    public static ArrayList<String> getCompany() throws SQLException {
+        PreparedStatement preparedStatement =
+                connection.prepareStatement("SELECT DISTINCT company_name FROM public.cruise");
+
+        ResultSet companyData = preparedStatement.executeQuery();
+        ArrayList <String> companyResult = new ArrayList<>();
+        while(companyData.next()){
+            String companyName = companyData.getString("company_name");
+            companyResult.add(companyName);
+        }
+        return companyResult;
+    }
     public static void decrementFreeSeats(int cruise_id) throws SQLException {
         PreparedStatement preparedStatement =
                 connection.prepareStatement("UPDATE public.cruise SET free_seats = free_seats - 1 WHERE cruise_id = ?");
@@ -79,8 +112,9 @@ public class CruiseDAO {
         }
 
         if (departureDate != null && !departureDate.isEmpty() && arrivalDate != null && !arrivalDate.isEmpty()) {
-            queryBuilder.append(" AND departure_date >= ? AND arrival_date <= ?");
+            queryBuilder.append(" AND departure_date >= TO_DATE(?, 'YYYY-MM-DD') AND arrival_date <= TO_DATE(?, 'YYYY-MM-DD')");
         }
+
 
         if (priceType != null && (priceType == 1 || priceType == 2)) {
             queryBuilder.append(" ORDER BY price");
@@ -103,16 +137,20 @@ public class CruiseDAO {
             }
 
 
-            ResultSet resultSet = statement.executeQuery();
+            ResultSet cruiseData = statement.executeQuery();
 
 
-            while (resultSet.next()) {
+            while (cruiseData.next()) {
                 Cruise cruise = new Cruise();
-                cruise.setPrice(resultSet.getInt("price"));
-                cruise.setFreeSeats(resultSet.getInt("free_seats"));
-                cruise.setCompany(resultSet.getString("company_name"));
-                cruise.setDeparture(resultSet.getString("departure_date"));
-                cruise.setArrival(resultSet.getString("arrival_date"));
+                cruise.setId(cruiseData.getInt("cruise_id"));
+                cruise.setPrice(cruiseData.getInt("price"));
+                cruise.setFreeSeats(cruiseData.getInt("free_seats"));
+                cruise.setCruiseRoute(getCities(cruiseData.getInt("cruise_id")));
+                cruise.setArrival(cruiseData.getString("arrival_date"));
+                cruise.setDeparture(cruiseData.getString("departure_date"));
+                cruise.setCompany(cruiseData.getString("company_name"));
+                cruise.setName(cruiseData.getString("name"));
+                cruise.setShip(cruiseData.getString("ship"));
                 cruises.add(cruise);
             }
         } catch (SQLException e) {
