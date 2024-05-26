@@ -1,0 +1,38 @@
+.hello_view_Button {
+    -fx-background-color: #fddc58;
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-font-size: 12px;
+}
+
+.hello_view_Button:hover {
+    -fx-font-size: 13px;
+}
+
+.hello_view_Title {
+    -fx-background-color: #fd904c;
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+
+.hello_view_PanelButton {
+    -fx-background-color: #f2ebeb;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+
+.hello_view_ScrollPanel {
+    -fx-background-color: #f2ebeb;
+}

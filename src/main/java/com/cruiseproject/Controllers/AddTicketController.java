@@ -2,15 +2,18 @@ package com.cruiseproject.Controllers;
 import com.cruiseproject.DAO.CruiseDAO;
 import com.cruiseproject.DAO.TicketDAO;
 import com.cruiseproject.Items.Cruise;
+import com.cruiseproject.Items.Ticket;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class AddTicketController {
     @FXML
@@ -70,6 +73,7 @@ public class AddTicketController {
                 if (selectedCruise != null){
                     changeVisibleItem(true);
                     add_ticket_idCruise_Label.setText(textID);
+                    add_ticket_nameCruise_Label.setText(selectedCruise.getName());
                 }
                 else {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -101,7 +105,7 @@ public class AddTicketController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успішне замовлення");
             alert.setHeaderText(null);
-            alert.setContentText("Замовлення " + selectedCruise.getCruiseRoute() + " успішно оформлено.");
+            alert.setContentText("Квиток успішно замовлено. ID: " + TicketDAO.getLastID());
             alert.showAndWait();
             window.close();
         } catch (SQLException e) {
@@ -113,6 +117,9 @@ public class AddTicketController {
         try {
             Scene scene = new Scene(fxmlLoader.load(), 600, 330);
             window = new Stage();
+            window.getIcons().add(new Image(Objects.requireNonNull(AddTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-16x16.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(AddTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-24x24.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(AddTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-32x32.png"))));
             window.setResizable(false);
             window.initModality(Modality.APPLICATION_MODAL);
             window.setTitle("Додати значення до Array List");

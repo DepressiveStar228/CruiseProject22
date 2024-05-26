@@ -1,5 +1,16 @@
 .card-border {
-    -fx-border-color: black;
+    -fx-border-color: #000000;
     -fx-border-width: 2;
     -fx-border-style: solid;
+}
+
+.card_TextField {
+    -fx-text-fill: #02040F;
+    -fx-font-size: 14px;
+}
+
+.card_TextFieldBold {
+    -fx-text-fill: #02040F;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
 }

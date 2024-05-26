@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="find_ticket" prefHeight="270.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.FindTicketController">
+<AnchorPane fx:id="find_ticket" prefHeight="270.0" prefWidth="480.0" styleClass="find_ticket_MainPanel" stylesheets="@../styles/find_ticket.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.FindTicketController">
    <children>
-      <Pane prefHeight="40.0" prefWidth="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="40.0" prefWidth="230.0" styleClass="find_ticket_TitlePanel" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutX="38.0" layoutY="4.0" prefHeight="32.0" prefWidth="154.0" text="Знайти квиток" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="34.0" layoutY="4.0" prefHeight="32.0" prefWidth="163.0" styleClass="find_ticket_TitleText" text="Знайти квиток" textAlignment="CENTER">
                <font>
                   <Font size="22.0" />
                </font>
@@ -19,12 +19,12 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="find_ticket_Label2" layoutX="14.0" layoutY="53.0" prefHeight="20.0" prefWidth="136.0" text="ID вибраного круїза:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label2" layoutX="14.0" layoutY="53.0" prefHeight="20.0" prefWidth="136.0" styleClass="find_ticket_TextField" text="ID вибраного круїза:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label3" layoutX="15.0" layoutY="84.0" text="Назва круїзу:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label3" layoutX="15.0" layoutY="84.0" styleClass="find_ticket_TextField" text="Назва круїзу:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -34,17 +34,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label4" layoutX="15.0" layoutY="115.0" text="Замовник:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label4" layoutX="15.0" layoutY="115.0" styleClass="find_ticket_TextField" text="Замовник:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label5" layoutX="15.0" layoutY="146.0" text="Компанія:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label5" layoutX="15.0" layoutY="146.0" styleClass="find_ticket_TextField" text="Компанія:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label8" layoutX="15.0" layoutY="203.0" text="Ціна:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="find_ticket_Label8" layoutX="15.0" layoutY="203.0" styleClass="find_ticket_TextField" text="Ціна:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -63,14 +63,14 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="find_ticket_Label1" layoutX="170.0" layoutY="74.0" text="Введіть ID квитка">
+      <Label fx:id="find_ticket_Label1" layoutX="170.0" layoutY="74.0" styleClass="find_ticket_TextField" text="Введіть ID квитка">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField fx:id="find_ticket_IDTicketTextField" layoutX="155.0" layoutY="102.0" />
-      <Button fx:id="find_ticket_getIDTicketButton" layoutX="181.0" layoutY="143.0" mnemonicParsing="false" onAction="#onGetIDTicketButtonClick" text="Підтвердити" />
-      <Label fx:id="find_ticket_Label7" layoutX="15.0" layoutY="175.0" text="Лайнер">
+      <Button fx:id="find_ticket_getIDTicketButton" layoutX="166.0" layoutY="146.0" mnemonicParsing="false" onAction="#onGetIDTicketButtonClick" prefHeight="40.0" prefWidth="118.0" styleClass="find_ticket_Button" text="Підтвердити" />
+      <Label fx:id="find_ticket_Label7" layoutX="15.0" layoutY="175.0" styleClass="find_ticket_TextField" text="Лайнер">
          <font>
             <Font size="14.0" />
          </font>

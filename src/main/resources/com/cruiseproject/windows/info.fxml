@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.InfoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="info_ticket_MainPanel" stylesheets="@../styles/info.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.InfoController">
    <children>
       <Pane prefHeight="40.0" prefWidth="230.0">
          <children>
@@ -15,9 +15,9 @@
              </Label>
          </children>
       </Pane>
-      <ScrollPane layoutX="45.0" layoutY="61.0" prefHeight="286.0" prefWidth="510.0">
+      <ScrollPane layoutX="45.0" layoutY="61.0" prefHeight="286.0" prefWidth="510.0" styleClass="info_ticket_TextPanel">
          <content>
-            <Label fx:id="infoTextLabel" wrapText="true" prefWidth="490.0">
+            <Label fx:id="infoTextLabel" prefWidth="490.0" wrapText="true">
                <font>
                   <Font size="14.0" />
                </font>

@@ -4,28 +4,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.HelloController">
+<HBox prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.HelloController">
    <children>
-      <Pane prefHeight="500.0" prefWidth="150.0">
+      <Pane prefHeight="500.0" prefWidth="175.0" styleClass="hello_view_PanelButton" stylesheets="@../styles/hello_view.css">
          <children>
             <Pane prefHeight="50.0" prefWidth="150.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="Cruise Project" textAlignment="CENTER">
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="175.0" styleClass="hello_view_Title" stylesheets="@../styles/hello_view.css" text="Cruise Project" textAlignment="CENTER">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="18.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="15.0" layoutY="239.0" mnemonicParsing="false" onAction="#onSortCruiseClick" prefHeight="50.0" prefWidth="120.0" text="Сортувати круїзи" textAlignment="CENTER" />
-            <Button layoutX="15.0" layoutY="50.0" mnemonicParsing="false" onAction="#onAddTicketClick" prefHeight="50.0" prefWidth="120.0" text="Замовити квиток" textAlignment="CENTER" wrapText="true" />
-            <Button layoutX="15.0" layoutY="177.0" mnemonicParsing="false" onAction="#onFindClick" prefHeight="50.0" prefWidth="120.0" text="Знайти квиток" textAlignment="CENTER" wrapText="true" />
-            <Button layoutX="15.0" layoutY="114.0" mnemonicParsing="false" onAction="#onDeleteTicketClick" prefHeight="50.0" prefWidth="120.0" text="Видалити квиток" textAlignment="CENTER" wrapText="true" />
-            <Button layoutX="15.0" layoutY="410.0" mnemonicParsing="false" onAction="#onAboutUsClick" prefHeight="31.0" prefWidth="120.0" text="Про нас" />
-            <Button layoutX="14.0" layoutY="455.0" mnemonicParsing="false" onAction="#onInformationClick" prefHeight="31.0" prefWidth="120.0" text="Довідка" />
+            <Button layoutX="23.0" layoutY="250.0" mnemonicParsing="false" onAction="#onSortCruiseClick" prefHeight="50.0" prefWidth="130.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Сортувати круїзи" textAlignment="CENTER" />
+            <Button layoutX="23.0" layoutY="65.0" mnemonicParsing="false" onAction="#onAddTicketClick" prefHeight="50.0" prefWidth="130.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Замовити квиток" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="23.0" layoutY="188.0" mnemonicParsing="false" onAction="#onFindClick" prefHeight="50.0" prefWidth="130.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Знайти квиток" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="23.0" layoutY="126.0" mnemonicParsing="false" onAction="#onDeleteTicketClick" prefHeight="50.0" prefWidth="130.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Видалити квиток" textAlignment="CENTER" wrapText="true" />
+            <Button layoutX="28.0" layoutY="410.0" mnemonicParsing="false" onAction="#onAboutUsClick" prefHeight="31.0" prefWidth="120.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Про нас" />
+            <Button layoutX="28.0" layoutY="455.0" mnemonicParsing="false" onAction="#onInformationClick" prefHeight="31.0" prefWidth="120.0" styleClass="hello_view_Button" stylesheets="@../styles/hello_view.css" text="Довідка" />
          </children>
       </Pane>
-      <ScrollPane fx:id="listCruises" prefHeight="500.0" prefWidth="500.0" vbarPolicy="NEVER">
+      <ScrollPane fx:id="listCruises" prefHeight="500.0" prefWidth="525.0" styleClass="hello_view_ScrollPanel" stylesheets="@../styles/hello_view.css" vbarPolicy="NEVER">
         <content>
           <VBox fx:id="itemCardCruise" spacing="-1.5" />
         </content>

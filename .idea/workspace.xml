@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V5 with Windows and ScrollPanel" />
+    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V5 with Windows and ScrollPanel">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/styles/cruise_card_item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/styles/cruise_card_item.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/about_us_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/about_us_text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/information_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/information_text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/add-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/add-ticket.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/cruise-card-children.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/cruise-card-children.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/delete-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/delete-ticket.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/find-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/find-ticket.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/info.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/sort-cruise.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/sort-cruise.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,11 +107,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\lab1\JavaProject\src\main\resources\com\cruiseproject\icons" />
+      <recent name="D:\Projects\lab1\JavaProject\src\main\resources\com\cruiseproject\styles" />
       <recent name="D:\Projects\lab1\JavaProject\src\main\resources\com\cruiseproject\windows" />
       <recent name="D:\Projects\lab1\JavaProject\src\main\resources\com\cruiseproject\text_files" />
       <recent name="D:\Projects\lab1\JavaProject\.gradle\8.2" />
-      <recent name="D:\Projects\lab1\JavaProject\.gradle\buildOutputCleanup" />
-      <recent name="D:\Projects\lab1\JavaProject\.gradle\vcs-1" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -132,7 +154,18 @@
       <workItem from="1716068992954" duration="402000" />
       <workItem from="1716069408924" duration="1367000" />
       <workItem from="1716070787614" duration="6573000" />
-      <workItem from="1716119501859" duration="4399000" />
+      <workItem from="1716119501859" duration="6457000" />
+      <workItem from="1716131471938" duration="4000" />
+      <workItem from="1716214845248" duration="3346000" />
+      <workItem from="1716366626431" duration="14000" />
+      <workItem from="1716381551505" duration="48000" />
+      <workItem from="1716397909949" duration="786000" />
+      <workItem from="1716416193635" duration="1705000" />
+      <workItem from="1716460311104" duration="28000" />
+      <workItem from="1716676931009" duration="7417000" />
+      <workItem from="1716684777848" duration="763000" />
+      <workItem from="1716719316658" duration="3000" />
+      <workItem from="1716725622999" duration="2022000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -174,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716123899580</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="V5 with Windows and ScrollPanel">
+      <option name="closed" value="true" />
+      <created>1716124627247</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716124627247</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,5 +239,20 @@
     <MESSAGE value="V4 with Windows" />
     <MESSAGE value="V5 with Windows and ScrollPanel" />
     <option name="LAST_COMMIT_MESSAGE" value="V5 with Windows and ScrollPanel" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java</url>
+          <line>99</line>
+          <properties class="com.cruiseproject.Controllers.InfoController" method="getFile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

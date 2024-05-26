@@ -6,11 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Optional;
 
 public class DeleteTicketController {
@@ -85,6 +87,9 @@ public class DeleteTicketController {
         try {
             Scene scene = new Scene(fxmlLoader.load(), 480, 270);
             window = new Stage();
+            window.getIcons().add(new Image(Objects.requireNonNull(DeleteTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-16x16.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(DeleteTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-24x24.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(DeleteTicketController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-32x32.png"))));
             window.setResizable(false);
             window.initModality(Modality.APPLICATION_MODAL);
             window.setTitle("Відмінити квиток");

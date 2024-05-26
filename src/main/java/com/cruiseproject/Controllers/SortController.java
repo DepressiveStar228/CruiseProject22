@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -141,6 +142,9 @@ public class SortController {
             SortController controller = fxmlLoader.getController();
             controller.setHelloController(helloController);
             window = new Stage();
+            window.getIcons().add(new Image(Objects.requireNonNull(SortController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-16x16.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(SortController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-24x24.png"))));
+            window.getIcons().add(new Image(Objects.requireNonNull(SortController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-32x32.png"))));
             window.setResizable(false);
             window.initModality(Modality.APPLICATION_MODAL);
             window.setTitle("Сортування круїзів");

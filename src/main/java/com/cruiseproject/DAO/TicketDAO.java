@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -55,6 +56,25 @@ public class TicketDAO {
         }
         return false;
     }
+    public static int getLastID() throws SQLException{
+        int lastID = 0;
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT MAX(ticket_id) as ticket_id FROM public.tickets");
+            ResultSet lastTicket = preparedStatement.executeQuery();
+            while(lastTicket.next()){
+                lastID = lastTicket.getInt("ticket_id");
+            }
+        } catch (NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
+        }
+
+        return lastID;
+    }
     public static void  addTicket(int cruise_id, String surname, String firstname) throws SQLException {
         try {
             Cruise cruise = CruiseDAO.findCruiseByID(cruise_id);
@@ -66,6 +86,7 @@ public class TicketDAO {
             preparedStatement.setString(4,firstname);
             CruiseDAO.decrementFreeSeats(cruise_id);
             preparedStatement.executeUpdate();
+
         } catch (NullPointerException e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
@@ -75,16 +96,27 @@ public class TicketDAO {
         }
     }
     public static ArrayList<Ticket> getTickets() throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("Select * from public.tickets");
-        ResultSet tickets = preparedStatement.executeQuery();
-        ArrayList<Ticket> ticketList = new ArrayList<>();
-        while(tickets.next()){
-            Ticket currTicket = new Ticket();
-            currTicket.setId(tickets.getInt("ticket_id"));
-            currTicket.setSeatNum(tickets.getInt("seat_num"));
-            currTicket.setCruise(CruiseDAO.findCruiseByID(tickets.getInt("cruise_id")));
-            ticketList.add(currTicket);
+        ArrayList<Ticket> ticketList = null;
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("Select * from public.tickets");
+            ResultSet tickets = preparedStatement.executeQuery();
+            ticketList = new ArrayList<>();
+            while(tickets.next()){
+                Ticket currTicket = new Ticket();
+                currTicket.setId(tickets.getInt("ticket_id"));
+                currTicket.setSeatNum(tickets.getInt("seat_num"));
+                currTicket.setCruise(CruiseDAO.findCruiseByID(tickets.getInt("cruise_id")));
+                ticketList.add(currTicket);
+            }
+        } catch (NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
         }
+
         return ticketList;
     }
 

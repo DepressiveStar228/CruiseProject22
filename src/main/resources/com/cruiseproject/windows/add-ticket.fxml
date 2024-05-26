@@ -4,49 +4,52 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="add_ticket" prefHeight="330.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.AddTicketController">
+<AnchorPane fx:id="add_ticket" prefHeight="330.0" prefWidth="600.0" styleClass="add_ticket_MainPanel" stylesheets="@../styles/add_ticket.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cruiseproject.Controllers.AddTicketController">
    <children>
-      <Pane layoutX="6.0" prefHeight="40.0" prefWidth="230.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="6.0" prefHeight="40.0" prefWidth="230.0" styleClass="add_ticket_TitlePanel" stylesheets="@../styles/add_ticket.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="26.0" layoutY="4.0" prefHeight="32.0" prefWidth="179.0" text="Замовити квиток" textAlignment="CENTER">
+            <Label layoutX="19.0" layoutY="3.0" prefHeight="34.0" prefWidth="193.0" styleClass="add_ticket_TitleText" stylesheets="@../styles/add_ticket.css" text="Замовити квиток" textAlignment="CENTER">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label fx:id="add_ticket_idCruise_Label" layoutX="151.0" layoutY="54.0">
+      <Label fx:id="add_ticket_idCruise_Label" layoutX="151.0" layoutY="54.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="add_ticket_Label2" layoutX="14.0" layoutY="53.0" prefHeight="20.0" prefWidth="136.0" text="ID вибраного круїза:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="add_ticket_Label2" layoutX="14.0" layoutY="53.0" prefHeight="20.0" prefWidth="136.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css" text="ID вибраного круїза:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="add_ticket_Label3" layoutX="15.0" layoutY="84.0" text="Назва круїзу:" AnchorPane.leftAnchor="15.0">
+      <Label fx:id="add_ticket_Label3" layoutX="15.0" layoutY="84.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css" text="Назва круїзу:" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="add_ticket_nameCruise_Label" layoutX="103.0" layoutY="85.0">
+      <Label fx:id="add_ticket_nameCruise_Label" layoutX="103.0" layoutY="85.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="add_ticket_Label4" layoutX="132.0" layoutY="164.0" text="Введіть ваше ім'я">
+      <Label fx:id="add_ticket_Label4" layoutX="132.0" layoutY="164.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css" text="Введіть ваше ім'я">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label fx:id="add_ticket_Label5" layoutX="341.0" layoutY="164.0" text="Введіть ваше призвіще">
+      <Label fx:id="add_ticket_Label5" layoutX="341.0" layoutY="164.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css" text="Введіть ваше призвіще">
          <font>
             <Font size="14.0" />
          </font></Label>
       <TextField fx:id="add_ticket_nameTextField" layoutX="113.0" layoutY="187.0" />
       <TextField fx:id="add_ticket_secNameTextField" layoutX="340.0" layoutY="187.0" />
-      <Button fx:id="add_ticketFinishButton" layoutX="244.0" layoutY="263.0" mnemonicParsing="false" onAction="#onFinishButtonClick" text="Замовити квиток" textAlignment="CENTER" />
-      <Button fx:id="add_ticket_getIDCruiseButton" layoutX="257.0" layoutY="138.0" mnemonicParsing="false" onAction="#onGetIDCruiseButtonClick" text="Підтвердити" />
-      <Label fx:id="add_ticket_Label1" layoutX="247.0" layoutY="75.0" text="Введіть ID круїзу">
+      <Button fx:id="add_ticketFinishButton" layoutX="228.0" layoutY="260.0" mnemonicParsing="false" onAction="#onFinishButtonClick" prefHeight="40.0" prefWidth="142.0" styleClass="add_ticket_Button" stylesheets="@../styles/add_ticket.css" text="Замовити квиток" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="add_ticket_getIDCruiseButton" layoutX="243.0" layoutY="157.0" mnemonicParsing="false" onAction="#onGetIDCruiseButtonClick" prefHeight="34.0" prefWidth="111.0" styleClass="add_ticket_Button" stylesheets="@../styles/add_ticket.css" text="Підтвердити" />
+      <Label fx:id="add_ticket_Label1" layoutX="247.0" layoutY="75.0" styleClass="add_ticket_TextField" stylesheets="@../styles/add_ticket.css" text="Введіть ID круїзу">
          <font>
             <Font size="14.0" />
          </font>

@@ -5,10 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 public class InfoController {
     @FXML
@@ -43,6 +47,9 @@ public class InfoController {
             try {
                 Scene scene = new Scene(fxmlLoader.load(), 600, 400);
                 window = new Stage();
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-16x16.png"))));
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-24x24.png"))));
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-32x32.png"))));
                 window.setResizable(false);
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setTitle("Про нас");
@@ -56,6 +63,9 @@ public class InfoController {
             try {
                 Scene scene = new Scene(fxmlLoader.load(), 600, 400);
                 window = new Stage();
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-16x16.png"))));
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-24x24.png"))));
+                window.getIcons().add(new Image(Objects.requireNonNull(InfoController.class.getResourceAsStream("/com/cruiseproject/icons/icon-cruise-32x32.png"))));
                 window.setResizable(false);
                 window.initModality(Modality.APPLICATION_MODAL);
                 window.setTitle("Довідка");
@@ -69,10 +79,10 @@ public class InfoController {
 
     private static String readTextFile(String filename){
         StringBuilder content = new StringBuilder();
-        String path = "D:\\Projects\\lab1\\JavaProject\\src\\main\\resources\\com\\cruiseproject\\text_files\\";
+        String path = "com/cruiseproject/text_files/" + filename;
         String line;
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path + filename), "UTF-8"))) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(getFile(path), StandardCharsets.UTF_8))) {
             while ((line = reader.readLine()) != null) {
                 content.append(line).append("\n");
             }
@@ -86,5 +96,17 @@ public class InfoController {
             alert.showAndWait();
             return null;
         }
+    }
+
+    private static InputStream getFile(String part){
+        InputStream resource = InfoController.class.getClassLoader().getResourceAsStream(part);
+        if (resource == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Файл з даними не знайдено");
+            alert.showAndWait();
+        }
+        return resource;
     }
 }

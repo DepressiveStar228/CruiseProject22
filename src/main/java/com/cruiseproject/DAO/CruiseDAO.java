@@ -48,18 +48,84 @@ public class CruiseDAO {
         return cruise;
     }
     public static ArrayList<City> getCities(int cruise_id) throws SQLException {
-        PreparedStatement preparedStatement =
-                connection.prepareStatement("SELECT cruise_id, city_id, city_position FROM public.cruise2cities where cruise_id = ?");
-        preparedStatement.setInt(1,cruise_id);
-        ResultSet citiesData = preparedStatement.executeQuery();
-        ArrayList <City> cityResult = new ArrayList<>();
-        while(citiesData.next()){
-            int city_id = citiesData.getInt("city_id");
-            int city_position = citiesData.getInt("city_position");
-            City currentCity = CityDAO.findCityByID(city_id);
-            cityResult.add(city_position,currentCity);
+        ArrayList<City> cityResult = null;
+
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT cruise_id, city_id, city_position FROM public.cruise2cities where cruise_id = ?");
+            preparedStatement.setInt(1,cruise_id);
+            ResultSet citiesData = preparedStatement.executeQuery();
+            cityResult = new ArrayList<>();
+            while(citiesData.next()){
+                int city_id = citiesData.getInt("city_id");
+                int city_position = citiesData.getInt("city_position");
+                City currentCity = CityDAO.findCityByID(city_id);
+                cityResult.add(city_position,currentCity);
+            }
+        } catch (NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
         }
+
         return cityResult;
+    }
+    public static ArrayList<Cruise> getCruises() throws SQLException {
+        ArrayList<Cruise> cruiseResult = null;
+
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT * FROM public.cruise");
+
+            ResultSet cruiseData = preparedStatement.executeQuery();
+            cruiseResult = new ArrayList<>();
+            while(cruiseData.next()){
+                Cruise cruise = new Cruise();
+                cruise.setId(cruiseData.getInt("cruise_id"));
+                cruise.setPrice(cruiseData.getInt("price"));
+                cruise.setFreeSeats(cruiseData.getInt("free_seats"));
+                cruise.setCruiseRoute(getCities(cruiseData.getInt("cruise_id")));
+                cruise.setArrival(cruiseData.getString("arrival_date"));
+                cruise.setDeparture(cruiseData.getString("departure_date"));
+                cruise.setCompany(cruiseData.getString("company_name"));
+                cruise.setName(cruiseData.getString("name"));
+                cruise.setShip(cruiseData.getString("ship"));
+                cruiseResult.add(cruise);
+            }
+        } catch (NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
+        }
+
+        return cruiseResult;
+    }
+    public static ArrayList<String> getCompany() throws SQLException {
+        ArrayList<String> companyResult = null;
+
+        try {
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT DISTINCT company_name FROM public.cruise");
+
+            ResultSet companyData = preparedStatement.executeQuery();
+            companyResult = new ArrayList<>();
+            while(companyData.next()){
+                String companyName = companyData.getString("company_name");
+                companyResult.add(companyName);
+            }
+        } catch (NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
+        }
+
+        return companyResult;
     }
     public static void decrementFreeSeats(int cruise_id) throws SQLException {
         PreparedStatement preparedStatement =
@@ -79,8 +145,9 @@ public class CruiseDAO {
         }
 
         if (departureDate != null && !departureDate.isEmpty() && arrivalDate != null && !arrivalDate.isEmpty()) {
-            queryBuilder.append(" AND departure_date >= ? AND arrival_date <= ?");
+            queryBuilder.append(" AND departure_date >= TO_DATE(?, 'YYYY-MM-DD') AND arrival_date <= TO_DATE(?, 'YYYY-MM-DD')");
         }
+
 
         if (priceType != null && (priceType == 1 || priceType == 2)) {
             queryBuilder.append(" ORDER BY price");
@@ -90,7 +157,6 @@ public class CruiseDAO {
         }
 
         try {
-
             PreparedStatement statement = connection.prepareStatement(queryBuilder.toString());
 
             int parameterIndex = 1;
@@ -102,17 +168,19 @@ public class CruiseDAO {
                 statement.setString(parameterIndex, arrivalDate);
             }
 
+            ResultSet cruiseData = statement.executeQuery();
 
-            ResultSet resultSet = statement.executeQuery();
-
-
-            while (resultSet.next()) {
+            while (cruiseData.next()) {
                 Cruise cruise = new Cruise();
-                cruise.setPrice(resultSet.getInt("price"));
-                cruise.setFreeSeats(resultSet.getInt("free_seats"));
-                cruise.setCompany(resultSet.getString("company_name"));
-                cruise.setDeparture(resultSet.getString("departure_date"));
-                cruise.setArrival(resultSet.getString("arrival_date"));
+                cruise.setId(cruiseData.getInt("cruise_id"));
+                cruise.setPrice(cruiseData.getInt("price"));
+                cruise.setFreeSeats(cruiseData.getInt("free_seats"));
+                cruise.setCruiseRoute(getCities(cruiseData.getInt("cruise_id")));
+                cruise.setArrival(cruiseData.getString("arrival_date"));
+                cruise.setDeparture(cruiseData.getString("departure_date"));
+                cruise.setCompany(cruiseData.getString("company_name"));
+                cruise.setName(cruiseData.getString("name"));
+                cruise.setShip(cruiseData.getString("ship"));
                 cruises.add(cruise);
             }
         } catch (SQLException e) {

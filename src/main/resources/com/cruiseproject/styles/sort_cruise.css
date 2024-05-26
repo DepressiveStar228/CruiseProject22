@@ -1,0 +1,44 @@
+.sort_ticket_Button {
+    -fx-background-color: #fddc58;
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-font-size: 14px;
+}
+
+.sort_ticket_Button:hover {
+    -fx-font-size: 15px;
+}
+
+.sort_ticket_TitlePanel {
+    -fx-background-color: #fd904c;
+    -fx-text-fill: #000000;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+
+.sort_ticket_TitleText {
+    -fx-text-fill: #02040F;
+    -fx-text-alignment: center;
+    -fx-font-weight: bold;
+}
+
+.sort_ticket_TextField {
+    -fx-text-fill: #02040F;
+}
+
+.sort_ticket_MainPanel {
+    -fx-background-color: #f2ebeb;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}

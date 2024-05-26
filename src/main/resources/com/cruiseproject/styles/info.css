@@ -1,0 +1,17 @@
+.info_ticket_MainPanel {
+    -fx-background-color: #f2ebeb;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+
+.info_ticket_TextPanel {
+    -fx-background-color: #c0b9b9;
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-background-radius: 12;
+    -fx-border-radius: 10;
+}
+
+
