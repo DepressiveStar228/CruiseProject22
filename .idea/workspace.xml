@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V5 with Windows and ScrollPanel">
+    <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V6 with Design and final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/styles/cruise_card_item.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/styles/cruise_card_item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/about_us_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/about_us_text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/information_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/text_files/information_text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/add-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/add-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/cruise-card-children.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/cruise-card-children.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/delete-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/delete-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/find-ticket.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/find-ticket.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/sort-cruise.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/cruiseproject/windows/sort-cruise.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="V3_DAO" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,7 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;artem&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Projects/lab1/JavaProject&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -165,7 +148,9 @@
       <workItem from="1716676931009" duration="7417000" />
       <workItem from="1716684777848" duration="763000" />
       <workItem from="1716719316658" duration="3000" />
-      <workItem from="1716725622999" duration="2022000" />
+      <workItem from="1716725622999" duration="3506000" />
+      <workItem from="1716731974699" duration="4000" />
+      <workItem from="1716732016188" duration="1426000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -215,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716124627247</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="V6 with Design and final">
+      <option name="closed" value="true" />
+      <created>1716727914188</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716727914188</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,21 +231,7 @@
     <MESSAGE value="V3 with DataBase and DAO" />
     <MESSAGE value="V4 with Windows" />
     <MESSAGE value="V5 with Windows and ScrollPanel" />
-    <option name="LAST_COMMIT_MESSAGE" value="V5 with Windows and ScrollPanel" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java</url>
-          <line>99</line>
-          <properties class="com.cruiseproject.Controllers.InfoController" method="getFile">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="V6 with Design and final" />
+    <option name="LAST_COMMIT_MESSAGE" value="V6 with Design and final" />
   </component>
 </project>

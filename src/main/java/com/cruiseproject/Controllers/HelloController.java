@@ -28,6 +28,7 @@ public class HelloController {
 
         try {
             cruises = CruiseDAO.getCruises();
+            setCruises(cruises);
         } catch (SQLException | NullPointerException e){
             setCruises(null);
         }
