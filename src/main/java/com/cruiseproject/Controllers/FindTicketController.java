@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
+// Клас контроллер пошуку квитків
 public class FindTicketController {
     @FXML
     private Label find_ticket_Label1;
@@ -65,19 +66,22 @@ public class FindTicketController {
     private Ticket selectedTicket;
 
 
+    // Метод ініціалізації модульного вікна для пошуку
     public void initialize() {
         changeVisibleItem(false);
     }
 
+    // Метод подія на клік "Підтвердити" айді квитка
     @FXML
     private void onGetIDTicketButtonClick() {
-        try {
+        try { // Пробуємо отримати айді з вводу
             String textID = find_ticket_IDTicketTextField.getText();
             ticketID = Integer.parseInt(textID);
 
-            try {
+            try { // Якщо все введно коректно, пробуємо знайти квиток за цим айді
                 selectedTicket = TicketDAO.findByID(ticketID);
 
+                //  Якщо квиток знайдено, то з'явиться форма з даними
                 if (selectedTicket != null){
                     changeVisibleItem(true);
                     find_ticket_idCruise_Label.setText(textID);
@@ -87,7 +91,7 @@ public class FindTicketController {
                     find_ticket_liner_Label.setText(selectedTicket.getCruise().getShip());
                     find_ticket_price_Label.setText(String.valueOf(selectedTicket.getCruise().getPrice()));
                 }
-                else {
+                else { // Якщо ж ні, то про це повідомить одна з помилок
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Помилка");
                     alert.setHeaderText(null);
@@ -110,6 +114,7 @@ public class FindTicketController {
         }
     }
 
+    // Метод відкриття модульного вікна пошуку квитків
     public static void findTicket(){
         FXMLLoader fxmlLoader = new FXMLLoader(FindTicketController.class.getResource("/com/cruiseproject/windows/find-ticket.fxml"));
         try {
@@ -128,6 +133,7 @@ public class FindTicketController {
         }
     }
 
+    // Метод контролю видимості елементів форм пошуку
     private void changeVisibleItem(boolean mod){
         find_ticket_Label2.setVisible(mod);
         find_ticket_Label3.setVisible(mod);

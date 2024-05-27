@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Optional;
 
+// Клас контроллер повертання квитків
 public class DeleteTicketController {
     @FXML
     private TextField del_ticket_IDTicketTextField;
@@ -23,15 +24,17 @@ public class DeleteTicketController {
     private int ticketID;
     private Ticket selectedTicket;
 
+    // Метод подія на клік "Підтвердити"
     @FXML
     private void onDeleteTicketButtonClick() {
-        try {
+        try { // Якщо айді введено коректно,...
             String textID = del_ticket_IDTicketTextField.getText();
             ticketID = Integer.parseInt(textID);
 
-            try {
+            try { // ...то пробуємо знайти квиток в базі даних.
                 selectedTicket = TicketDAO.findByID(ticketID);
 
+                // Якщо квиток знайдено, то виводимо підтвердження повернення квитка
                 if (selectedTicket != null){
                     String confirmationMessage = "Ви точно хочете відмовитись від квитка?";
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION, confirmationMessage, ButtonType.YES, ButtonType.NO);
@@ -39,10 +42,12 @@ public class DeleteTicketController {
                     alert.setHeaderText(null);
 
                     Optional<ButtonType> result = alert.showAndWait();
+
+                    // Якщо підтвердження відбувається, то видаляємо квиток з бази даних
                     if (result.isPresent() && result.get() == ButtonType.YES) {
                         boolean flag = TicketDAO.removeTicketByID(ticketID);
 
-                        if (flag){
+                        if (flag){ // Повідомляємо користувача про успішне повернення
                             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                             successAlert.setTitle("Успішно");
                             successAlert.setHeaderText(null);
@@ -50,7 +55,7 @@ public class DeleteTicketController {
                             successAlert.showAndWait();
                             window.close();
                         }
-                        else {
+                        else { // Повідомляємо користувача про помилку, якщо не вдалося повернути квиток
                             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                             errorAlert.setTitle("Помилка");
                             errorAlert.setHeaderText(null);
@@ -82,6 +87,7 @@ public class DeleteTicketController {
         }
     }
 
+    // Метод відображення модульного вікна видалення квитків
     public static void delTicket(){
         FXMLLoader fxmlLoader = new FXMLLoader(DeleteTicketController.class.getResource("/com/cruiseproject/windows/delete-ticket.fxml"));
         try {

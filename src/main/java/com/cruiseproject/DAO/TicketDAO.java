@@ -10,14 +10,16 @@ import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 
+// Клас зв'язку програми з таблицею білетів у БД
 @Component
 public class TicketDAO {
-    private static Connection connection = PostgreConnection.getConnection();
+    private static Connection connection = PostgreConnection.getConnection(); // Отримуємо зв'язок
 
+    // Метод знаходження квитка за його айді
     public static Ticket findByID(int ticket_id) throws SQLException {
         Ticket ticket = null;
 
-        try {
+        try { // Спроба знайти квиток
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT * FROM public.tickets WHERE ticket_id=?");
             preparedStatement.setInt(1 , ticket_id);
@@ -30,7 +32,7 @@ public class TicketDAO {
                 ticket.setSurname(ticketData.getString("surname"));
                 ticket.setFirstname(ticketData.getString("firstname"));
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){ // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -40,14 +42,16 @@ public class TicketDAO {
 
         return ticket;
     }
+
+    // Метод видалення квитка за його айді
     public static boolean removeTicketByID(int ticket_id) throws SQLException {
-        try {
+        try { // Спроба видалити квиток
             PreparedStatement preparedStatement =
                     connection.prepareStatement("DELETE FROM public.tickets WHERE ticket_id = ?");
             preparedStatement.setInt(1,ticket_id);
             preparedStatement.executeUpdate();
             return true;
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){ // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -56,16 +60,18 @@ public class TicketDAO {
         }
         return false;
     }
+
+    // Метод отримання айді квитка, що було замовлено останнім
     public static int getLastID() throws SQLException{
         int lastID = 0;
 
-        try {
+        try { // Спроба знайти останній квиток
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT MAX(ticket_id) as ticket_id FROM public.tickets");
             ResultSet lastTicket = preparedStatement.executeQuery();
             while(lastTicket.next()){
                 lastID = lastTicket.getInt("ticket_id");
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){ // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -75,8 +81,10 @@ public class TicketDAO {
 
         return lastID;
     }
+
+    // Метод додавання квитка за даними круїза та особистих даних користувача
     public static void  addTicket(int cruise_id, String surname, String firstname) throws SQLException {
-        try {
+        try { // Спроба додати квиток
             Cruise cruise = CruiseDAO.findCruiseByID(cruise_id);
             PreparedStatement preparedStatement =
                     connection.prepareStatement("INSERT INTO public.tickets (cruise, seat_num, surname , firstname) VALUES (?, ? , ?, ?)");
@@ -87,7 +95,7 @@ public class TicketDAO {
             CruiseDAO.decrementFreeSeats(cruise_id);
             preparedStatement.executeUpdate();
 
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){  // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -95,30 +103,4 @@ public class TicketDAO {
             alert.showAndWait();
         }
     }
-    public static ArrayList<Ticket> getTickets() throws SQLException {
-        ArrayList<Ticket> ticketList = null;
-
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement("Select * from public.tickets");
-            ResultSet tickets = preparedStatement.executeQuery();
-            ticketList = new ArrayList<>();
-            while(tickets.next()){
-                Ticket currTicket = new Ticket();
-                currTicket.setId(tickets.getInt("ticket_id"));
-                currTicket.setSeatNum(tickets.getInt("seat_num"));
-                currTicket.setCruise(CruiseDAO.findCruiseByID(tickets.getInt("cruise_id")));
-                ticketList.add(currTicket);
-            }
-        } catch (NullPointerException e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Помилка");
-            alert.setHeaderText(null);
-            alert.setContentText("Не вдалося зв'язатися з базою даних");
-            alert.showAndWait();
-        }
-
-        return ticketList;
-    }
-
-
 }

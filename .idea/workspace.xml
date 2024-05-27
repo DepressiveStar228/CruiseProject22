@@ -6,8 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V6 with Design and final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddCruiseCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddCruiseCardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/PostgreConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/PostgreConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +163,10 @@
       <workItem from="1716719316658" duration="3000" />
       <workItem from="1716725622999" duration="3506000" />
       <workItem from="1716731974699" duration="4000" />
-      <workItem from="1716732016188" duration="1426000" />
+      <workItem from="1716732016188" duration="1672000" />
+      <workItem from="1716743410357" duration="4000" />
+      <workItem from="1716809442842" duration="114000" />
+      <workItem from="1716809611877" duration="5505000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -208,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716727914188</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="V6 with Design and final">
+      <option name="closed" value="true" />
+      <created>1716733541444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716733541444</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

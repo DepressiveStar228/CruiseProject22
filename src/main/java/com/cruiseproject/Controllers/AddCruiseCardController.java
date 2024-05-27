@@ -5,6 +5,7 @@ import com.cruiseproject.Items.Cruise;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+// Класс контроллер додавання карток круїзів до головної стрічки
 public class AddCruiseCardController {
 
     @FXML
@@ -25,6 +26,7 @@ public class AddCruiseCardController {
     @FXML
     private Label sort_childrenPrice_Label;
 
+    // Метод занесення даних про круїз до картки
     public void setInfoCruise(Cruise cruise) {
         sort_childrenID_Label.setText(String.valueOf(cruise.getId()));
         sort_childrenNameCruise_Label.setText(cruise.getName());

@@ -14,13 +14,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+// Клас зв'язку програми з таблицею круїзів у БД
 public class CruiseDAO {
-    private static final Connection connection = PostgreConnection.getConnection();
+    private static final Connection connection = PostgreConnection.getConnection(); // Отримуємо зв'язок
 
+    // Метод знаходження круїза за його айді
     public static Cruise findCruiseByID(int cruise_id) throws SQLException {
         Cruise cruise = null;
 
-        try {
+        try { // Спроба знайти круїз
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT * FROM public.cruise WHERE cruise_id=?");
             preparedStatement.setInt(1,cruise_id);
@@ -37,7 +39,7 @@ public class CruiseDAO {
                 cruise.setName(cruiseData.getString("name"));
                 cruise.setShip(cruiseData.getString("ship"));
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){  // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -47,10 +49,12 @@ public class CruiseDAO {
 
         return cruise;
     }
+
+    // Метод повернення списку міст круїза за його айді
     public static ArrayList<City> getCities(int cruise_id) throws SQLException {
         ArrayList<City> cityResult = null;
 
-        try {
+        try { // Спроба знайти міста
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT cruise_id, city_id, city_position FROM public.cruise2cities where cruise_id = ?");
             preparedStatement.setInt(1,cruise_id);
@@ -62,7 +66,7 @@ public class CruiseDAO {
                 City currentCity = CityDAO.findCityByID(city_id);
                 cityResult.add(city_position,currentCity);
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){ // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -72,10 +76,12 @@ public class CruiseDAO {
 
         return cityResult;
     }
+
+    // Метод повернення списку круїзів
     public static ArrayList<Cruise> getCruises() throws SQLException {
         ArrayList<Cruise> cruiseResult = null;
 
-        try {
+        try { // Спроба знайти круїзи
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT * FROM public.cruise");
 
@@ -94,7 +100,7 @@ public class CruiseDAO {
                 cruise.setShip(cruiseData.getString("ship"));
                 cruiseResult.add(cruise);
             }
-        } catch (NullPointerException e){
+        } catch (NullPointerException e){ // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);
@@ -104,6 +110,8 @@ public class CruiseDAO {
 
         return cruiseResult;
     }
+
+    // Метод повернення списку компаній, що надають послуги круїзів в даний момент
     public static ArrayList<String> getCompany() throws SQLException {
         ArrayList<String> companyResult = null;
 
@@ -127,28 +135,38 @@ public class CruiseDAO {
 
         return companyResult;
     }
+
+    // Метод бронювання одно місця в круїзі за його айді
     public static void decrementFreeSeats(int cruise_id) throws SQLException {
-        PreparedStatement preparedStatement =
-                connection.prepareStatement("UPDATE public.cruise SET free_seats = free_seats - 1 WHERE cruise_id = ?");
-        preparedStatement.setInt(1 , cruise_id);
-        preparedStatement.executeUpdate();
+        try {// Спроба оновити місця в круїзі
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("UPDATE public.cruise SET free_seats = free_seats - 1 WHERE cruise_id = ?");
+            preparedStatement.setInt(1 , cruise_id);
+            preparedStatement.executeUpdate();
+        } catch (NullPointerException e){ // Вивід інформації про помилку
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Помилка");
+            alert.setHeaderText(null);
+            alert.setContentText("Не вдалося зв'язатися з базою даних");
+            alert.showAndWait();
+        }
     }
+
+    // Метод сортування круїзів за параметрами
     public static ArrayList<Cruise> sorting(String company, Integer priceType, String departureDate, String arrivalDate) {
         ArrayList<Cruise> cruises = new ArrayList<>();
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM public.cruise WHERE 1=1"); // Початок запиту сортування
 
-
-        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM public.cruise WHERE 1=1");
-
-
-        if (company != null && !company.isEmpty()) {
+        if (company != null && !company.isEmpty()) { // Якщо передана назва компанії є та не пуста, то додаємо в запит і її
             queryBuilder.append(" AND company_name = ?");
         }
 
+        // Якщо передані дати подорожі є та не пусті, то додаємо в запит і їх
         if (departureDate != null && !departureDate.isEmpty() && arrivalDate != null && !arrivalDate.isEmpty()) {
             queryBuilder.append(" AND departure_date >= TO_DATE(?, 'YYYY-MM-DD') AND arrival_date <= TO_DATE(?, 'YYYY-MM-DD')");
         }
 
-
+        // Якщо переданий парамент сортування за ціною є та не пустий, то додаємо в запит і його
         if (priceType != null && (priceType == 1 || priceType == 2)) {
             queryBuilder.append(" ORDER BY price");
             if (priceType == 2) {
@@ -156,7 +174,7 @@ public class CruiseDAO {
             }
         }
 
-        try {
+        try { // Спроба сортувати круїзи
             PreparedStatement statement = connection.prepareStatement(queryBuilder.toString());
 
             int parameterIndex = 1;
@@ -170,7 +188,7 @@ public class CruiseDAO {
 
             ResultSet cruiseData = statement.executeQuery();
 
-            while (cruiseData.next()) {
+            while (cruiseData.next()) { // Занесення отриманих відсортованих круїзів до списку
                 Cruise cruise = new Cruise();
                 cruise.setId(cruiseData.getInt("cruise_id"));
                 cruise.setPrice(cruiseData.getInt("price"));
@@ -185,7 +203,7 @@ public class CruiseDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (NullPointerException e) {
+        } catch (NullPointerException e) { // Вивід інформації про помилку
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
             alert.setHeaderText(null);

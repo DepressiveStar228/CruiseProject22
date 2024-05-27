@@ -1,5 +1,6 @@
 package com.cruiseproject.Items;
 
+// Класс сутність Місто
 public class City {
     private int id;
     private String name;

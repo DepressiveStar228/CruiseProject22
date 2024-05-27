@@ -14,6 +14,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
+// Клас контроллер виводу інформації
 public class InfoController {
     @FXML
     private Label infoNameLabel;
@@ -26,7 +27,8 @@ public class InfoController {
     private static boolean mod;
 
 
-    public void initialize() {
+    // Метод ініціалізації назв модульних вікон та файлів з даними
+     public void initialize() {
         if (mod) {
             infoNameLabel.setText("Про нас");
             info_text = readTextFile("about_us_text.txt");
@@ -39,11 +41,12 @@ public class InfoController {
         infoTextLabel.setText(info_text);
     }
 
+    // Метод відкриття модульних вікон
     public static void info(boolean modType) {
         FXMLLoader fxmlLoader = new FXMLLoader(InfoController.class.getResource("/com/cruiseproject/windows/info.fxml"));
         mod = modType;
 
-        if (modType){
+        if (modType){  // Відкриття модульного вікна "Про нас"
             try {
                 Scene scene = new Scene(fxmlLoader.load(), 600, 400);
                 window = new Stage();
@@ -59,7 +62,7 @@ public class InfoController {
                 throw new RuntimeException(e);
             }
         }
-        else {
+        else {  // Відкриття модульного вікна "Довідка"
             try {
                 Scene scene = new Scene(fxmlLoader.load(), 600, 400);
                 window = new Stage();
@@ -77,17 +80,19 @@ public class InfoController {
         }
     }
 
+    // Метод читання тексту з файлу
     private static String readTextFile(String filename){
         StringBuilder content = new StringBuilder();
-        String path = "com/cruiseproject/text_files/" + filename;
+        String path = "com/cruiseproject/text_files/" + filename; // Шлях до файлів з текстом
         String line;
 
+        // Пробуємо читати дані
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(getFile(path), StandardCharsets.UTF_8))) {
             while ((line = reader.readLine()) != null) {
                 content.append(line).append("\n");
             }
             return content.toString();
-        } catch (IOException e) {
+        } catch (IOException e) {  // Повідомлення про помилку, якщо не вдалося
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Помилка");
@@ -98,6 +103,7 @@ public class InfoController {
         }
     }
 
+    // Метод пошуку файлу за шляхом
     private static InputStream getFile(String part){
         InputStream resource = InfoController.class.getClassLoader().getResourceAsStream(part);
         if (resource == null) {

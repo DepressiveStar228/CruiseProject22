@@ -3,6 +3,7 @@ package com.cruiseproject.Items;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+// Класс сутність Круїз
 public class Cruise {
     private int id;
     private int price;
@@ -30,6 +31,7 @@ public class Cruise {
         this.name = name;
     }
 
+    // Конструктор класу
     public Cruise(int id, int price, int freeSeats, ArrayList<City> cruiseRoute, String company, String departure, String arrival, String ship, String name) {
         this.id = id;
         this.price = price;
@@ -68,7 +70,7 @@ public class Cruise {
 
     public Cruise(){};
 
-
+    //Метод повернення маршруту круїза
     public String getRoute() {
         StringBuilder route = new StringBuilder();
         for (int i = 0; i < cruiseRoute.size(); i++) {

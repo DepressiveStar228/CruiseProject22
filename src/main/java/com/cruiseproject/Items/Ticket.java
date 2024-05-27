@@ -1,5 +1,6 @@
 package com.cruiseproject.Items;
 
+// Класс сутність Квиток
 public class Ticket {
 
     private int id;
@@ -26,6 +27,7 @@ public class Ticket {
         this.firstname = firstname;
     }
 
+    // Конструктор класу
     public Ticket(int id, Cruise cruise, int seatNum, String surname, String firstname) {
         this.id = id;
         this.cruise = cruise;

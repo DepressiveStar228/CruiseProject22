@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 
+// Клас контроллер замовлення квитків
 public class AddTicketController {
     @FXML
     private Label add_ticket_Label1;
@@ -57,25 +58,28 @@ public class AddTicketController {
     private Cruise selectedCruise;
 
 
+    // Метод ініціалізації модульного вікна для замовлення
     public void initialize() {
         changeVisibleItem(false);
     }
 
+    // Метод подія на клік "Підтвердити" айді круїзу
     @FXML
     private void onGetIDCruiseButtonClick() {
-        try {
+        try { // Пробуємо отримати айді з вводу
             String textID = add_ticket_IDCruiseTextField.getText();
             cruiseID = Integer.parseInt(textID);
 
-            try {
+            try { // Якщо все введно коректно, пробуємо знайти круїз за цим айді
                 selectedCruise = CruiseDAO.findCruiseByID(cruiseID);
 
+                //  Якщо круїз знайдено, то з'явиться форма вводу особистих даних
                 if (selectedCruise != null){
                     changeVisibleItem(true);
                     add_ticket_idCruise_Label.setText(textID);
                     add_ticket_nameCruise_Label.setText(selectedCruise.getName());
                 }
-                else {
+                else {  // Якщо ж ні, то про це повідомить одна з помилок
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Помилка");
                     alert.setHeaderText(null);
@@ -98,9 +102,10 @@ public class AddTicketController {
         }
     }
 
+    // Метод подія на клік "Замовити квиток"
     @FXML
     private void onFinishButtonClick() {
-        try {
+        try { // Якщо всі дані отримуються добре, то квиток оформлюється
             TicketDAO.addTicket(cruiseID, add_ticket_nameTextField.getText() , add_ticket_secNameTextField.getText());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Успішне замовлення");
@@ -112,6 +117,8 @@ public class AddTicketController {
             throw new RuntimeException(e);
         }
     }
+
+    // Метод відкриття модульного вікна замовлення квитків
     public static void addTicket(){
         FXMLLoader fxmlLoader = new FXMLLoader(AddTicketController.class.getResource("/com/cruiseproject/windows/add-ticket.fxml"));
         try {
@@ -130,6 +137,7 @@ public class AddTicketController {
         }
     }
 
+    // Метод контролю видимості елементів форм замовлення
     private void changeVisibleItem(boolean mod){
         add_ticket_Label2.setVisible(mod);
         add_ticket_Label3.setVisible(mod);
