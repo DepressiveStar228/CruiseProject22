@@ -82,7 +82,7 @@ public class FindTicketController {
                 selectedTicket = TicketDAO.findByID(ticketID);
 
                 //  Якщо квиток знайдено, то з'явиться форма з даними
-                if (selectedTicket != null){
+                if (selectedTicket != null && selectedTicket.getId() != 0){
                     changeVisibleItem(true);
                     find_ticket_idCruise_Label.setText(textID);
                     find_ticket_nameCruise_Label.setText(selectedTicket.getCruise().getName());

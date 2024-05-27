@@ -35,7 +35,7 @@ public class DeleteTicketController {
                 selectedTicket = TicketDAO.findByID(ticketID);
 
                 // Якщо квиток знайдено, то виводимо підтвердження повернення квитка
-                if (selectedTicket != null){
+                if (selectedTicket != null && selectedTicket.getId() != 0){
                     String confirmationMessage = "Ви точно хочете відмовитись від квитка?";
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION, confirmationMessage, ButtonType.YES, ButtonType.NO);
                     alert.setTitle("Підтвердження");

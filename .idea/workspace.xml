@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fdb71211-b09b-434a-bb76-096cc1093b4a" name="Changes" comment="V6 with Design and final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddCruiseCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddCruiseCardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/AddTicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/DeleteTicketController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/FindTicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/InfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Controllers/SortController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/CruiseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/PostgreConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/PostgreConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Cruise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Items/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cruiseproject/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +153,9 @@
       <workItem from="1716732016188" duration="1672000" />
       <workItem from="1716743410357" duration="4000" />
       <workItem from="1716809442842" duration="114000" />
-      <workItem from="1716809611877" duration="5505000" />
+      <workItem from="1716809611877" duration="11737000" />
+      <workItem from="1716847139597" duration="61000" />
+      <workItem from="1716849426845" duration="2063000" />
     </task>
     <task id="LOCAL-00001" summary="Черновик v1">
       <option name="closed" value="true" />
@@ -232,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716733541444</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="V6 with Design and final">
+      <option name="closed" value="true" />
+      <created>1716815187275</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716815187275</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,5 +254,20 @@
     <MESSAGE value="V5 with Windows and ScrollPanel" />
     <MESSAGE value="V6 with Design and final" />
     <option name="LAST_COMMIT_MESSAGE" value="V6 with Design and final" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cruiseproject/DAO/TicketDAO.java</url>
+          <line>18</line>
+          <properties class="com.cruiseproject.DAO.TicketDAO" method="findByID">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

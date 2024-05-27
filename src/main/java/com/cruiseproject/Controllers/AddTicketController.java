@@ -74,7 +74,7 @@ public class AddTicketController {
                 selectedCruise = CruiseDAO.findCruiseByID(cruiseID);
 
                 //  Якщо круїз знайдено, то з'явиться форма вводу особистих даних
-                if (selectedCruise != null){
+                if (selectedCruise != null && selectedCruise.getId() != 0){
                     changeVisibleItem(true);
                     add_ticket_idCruise_Label.setText(textID);
                     add_ticket_nameCruise_Label.setText(selectedCruise.getName());
